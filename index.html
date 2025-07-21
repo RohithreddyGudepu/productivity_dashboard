@@ -3,46 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Productivity Dashboard</title>
+  <title>My Productivity Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="dashboard">
-    <h1>Productivity Dashboard</h1>
+  <div class="container">
+    <header>
+      <h1>🌟 Productivity Dashboard</h1>
 
-    <!-- Weather Section -->
-    <section id="weather-info" class="widget"></section>
+      <!-- ✅ Fixed Weather Block -->
+      <div id="weather-info" class="weather-block">
+        <!-- Weather content will be injected here -->
+      </div>
+    </header>
 
-    <!-- Daily Quote -->
-    <section class="widget" id="quote-section">
-      <h2>Daily Quote</h2>
-      <p id="quote-text">Loading quote...</p>
-      <p id="quote-author"></p>
+    <section class="quote">
+      <h2>💡 Daily Quote</h2>
+      <blockquote>
+        <p id="quote-text">Loading quote...</p>
+        <footer id="quote-author"></footer>
+      </blockquote>
     </section>
 
-    <!-- To-Do Section -->
-    <section class="todo-section widget">
-      <h2>To-Do List</h2>
-      <input type="text" id="task-input" placeholder="Enter a task" />
-      <input type="date" id="task-date" />
-      <button onclick="addTask()">Add Task</button>
-
-      <h3>Tasks for <span id="selected-date"></span></h3>
+    <section class="todo">
+      <h2>📝 To-Do List</h2>
+      <div class="add-task">
+        <input type="text" id="task-input" placeholder="Enter a task..." />
+        <input type="date" id="task-date" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="task-view">
+        <label for="view-date">View Tasks on:</label>
+        <input type="date" id="task-date-select" onchange="loadTasksForDate()" />
+      </div>
       <ul id="task-list"></ul>
-
-      <label for="task-date-select">View Tasks on:</label>
-      <input type="date" id="task-date-select" onchange="loadTasksForDate()" />
     </section>
 
-    <!-- Calendar -->
-    <section id="calendar-container" class="widget"></section>
+    <section class="calendar">
+      <h2>📅 Calendar</h2>
 
-    <!-- Modals -->
-    <div id="morning-reminder" class="modal"></div>
-    <div id="evening-alert" class="modal"></div>
+      <!-- ✅ Fixed Calendar Container -->
+      <div id="calendar-container"></div>
+    </section>
   </div>
 
-  <!-- Scripts -->
+  <div class="modal" id="morning-reminder"></div>
+  <div class="modal" id="evening-alert"></div>
+
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
