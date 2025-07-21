@@ -140,7 +140,6 @@ function renderCalendar() {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   days.forEach((day) => (html += `<th>${day}</th>`));
   html += "</tr><tr>";
-
   const firstDay = new Date(currentYear, date.getMonth(), 1).getDay();
   const totalDays = new Date(currentYear, date.getMonth() + 1, 0).getDate();
 
