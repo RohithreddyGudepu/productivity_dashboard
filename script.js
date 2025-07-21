@@ -1,12 +1,12 @@
 // === WEATHER API ===
 const weatherInfo = document.getElementById("weather-info");
-const weatherAPIKey = 'YOUR_API_KEY_HERE'; // Replace this with your real key locally
+
 
 function getWeather() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherAPIKey}&units=metric`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`)
         .then(res => res.json())
         .then(data => {
           weatherInfo.innerHTML = `
