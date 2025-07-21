@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productivity Dashboard By Rohith</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="dashboard">
     <h1>Productivity Dashboard</h1>
 
-    <section class="todo-section">
+    <!-- Weather Section -->
+    <section id="weather-info" class="widget"></section>
+
+    <!-- Daily Quote -->
+    <section class="widget" id="quote-section">
+      <h2>Daily Quote</h2>
+      <p id="quote-text">Loading quote...</p>
+      <p id="quote-author"></p>
+    </section>
+
+    <!-- To-Do Section -->
+    <section class="todo-section widget">
       <h2>To-Do List</h2>
       <input type="text" id="task-input" placeholder="Enter a task" />
       <input type="date" id="task-date" />
@@ -23,11 +34,15 @@
       <input type="date" id="task-date-select" onchange="loadTasksForDate()" />
     </section>
 
-    <!-- Reminder modals -->
+    <!-- Calendar -->
+    <section id="calendar-container" class="widget"></section>
+
+    <!-- Modals -->
     <div id="morning-reminder" class="modal"></div>
     <div id="evening-alert" class="modal"></div>
   </div>
 
+  <!-- Scripts -->
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
