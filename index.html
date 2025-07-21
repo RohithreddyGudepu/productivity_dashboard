@@ -2,49 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Productivity Dashboard by Rohith</title>
-<meta name="description" content="A personal productivity dashboard with to-do list, weather, quotes, and calendar.">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productivity Dashboard By Rohith</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Productivity Dashboard</h1>
-    </header>
+  <div class="dashboard">
+    <h1>Productivity Dashboard</h1>
 
-    <section class="dashboard">
-      <div class="widget" id="weather">
-        <h2>Weather</h2>
-        <div id="weather-info">Loading...</div>
-      </div>
+    <section class="todo-section">
+      <h2>To-Do List</h2>
+      <input type="text" id="task-input" placeholder="Enter a task" />
+      <input type="date" id="task-date" />
+      <button onclick="addTask()">Add Task</button>
 
-      <div class="widget" id="todo">
-        <h2>To-Do List</h2>
-        <input type="text" id="task-input" placeholder="Add new task..." />
-        <button onclick="addTask()">Add</button>
-        <ul id="task-list"></ul>
-      </div>
+      <h3>Tasks for <span id="selected-date"></span></h3>
+      <ul id="task-list"></ul>
 
-      <div class="widget" id="quote">
-        <h2>Daily Quote</h2>
-        <p id="quote-text">Loading...</p>
-        <small id="quote-author"></small>
-      </div>
-
-      <div class="widget" id="calendar">
-  <h2>Calendar</h2>
-  <div id="calendar-scroll">
-    <div id="calendar-container"></div>
-  </div>
-</div>
-
+      <label for="task-date-select">View Tasks on:</label>
+      <input type="date" id="task-date-select" onchange="loadTasksForDate()" />
     </section>
+
+    <!-- Reminder modals -->
+    <div id="morning-reminder" class="modal"></div>
+    <div id="evening-alert" class="modal"></div>
   </div>
 
   <script src="config.js"></script>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
