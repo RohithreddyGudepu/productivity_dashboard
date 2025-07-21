@@ -1,110 +1,201 @@
-/* General Styling */
+/* Global Styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #e6ecf0);
   margin: 0;
   padding: 0;
-}
-
-.dashboard {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Widget Styling */
-.widget {
-  background: #f9f9f9;
-  border-left: 5px solid #007bff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.widget:hover {
-  transform: scale(1.02);
-}
-
-/* Headings */
-h1, h2, h3 {
   color: #333;
 }
 
-/* Inputs & Buttons */
-input[type='text'], input[type='date'] {
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Dashboard Container */
+.dashboard {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Section Headings */
+section {
+  margin-bottom: 30px;
+}
+
+/* Weather Section */
+#weather-info {
+  font-size: 16px;
+  background: #e3f2fd;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* Quote Section */
+#quote-text {
+  font-style: italic;
+  font-size: 18px;
+  color: #444;
+}
+
+#quote-author {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* To-Do Input Section */
+.todo-section input[type="text"],
+.todo-section input[type="date"] {
   padding: 10px;
-  margin-right: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 200px;
 }
 
 button {
-  padding: 10px 16px;
-  background-color: #007bff;
+  padding: 10px 18px;
+  background-color: #28a745;
+  color: #fff;
   border: none;
-  color: white;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
+  transform: scale(1.02);
 }
 
-/* To-Do List */
+button:active {
+  transform: scale(0.98);
+  background-color: #1e7e34;
+}
+
+/* Task List */
 #task-list {
   list-style: none;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 #task-list li {
-  background: #fff;
+  background: #fefefe;
   border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 6px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background 0.3s;
 }
 
-/* Calendar */
-#calendar-container table {
-  width: 100%;
-  border-collapse: collapse;
+#task-list li:hover {
+  background: #f1f1f1;
 }
 
-#calendar-container th, td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ccc;
+#task-list li.completed {
+  text-decoration: line-through;
+  color: #bbb;
+  background: #f8f9fa;
 }
 
-.today {
-  background-color: #d1ecf1;
-  font-weight: bold;
-  border: 2px solid #007bff;
+/* Task Delete Icon */
+#task-list span {
+  cursor: pointer;
+  color: #dc3545;
+  font-size: 18px;
+  transition: transform 0.2s;
 }
 
-/* Modal */
+#task-list span:hover {
+  transform: scale(1.2);
+}
+
+/* Modal Reminder Popup */
 .modal {
   display: none;
   position: fixed;
-  top: 10px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   background: #fff3cd;
   border: 1px solid #ffeeba;
-  padding: 15px;
-  z-index: 999;
-  border-radius: 8px;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Calendar */
+#calendar-container {
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+#calendar-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#calendar-container th, #calendar-container td {
+  padding: 10px;
+  width: 14.2%;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+#calendar-container td:hover {
+  background-color: #e2e6ea;
+  cursor: pointer;
+}
+
+.today {
+  background-color: #007bff !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Task Viewer Section */
+.task-viewer input[type="date"] {
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .todo-section input,
+  .task-viewer input,
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  #calendar-container table {
+    font-size: 12px;
+  }
 }
