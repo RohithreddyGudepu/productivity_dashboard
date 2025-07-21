@@ -1,34 +1,49 @@
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #f0f2f5;
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
 .dashboard {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Widget Styling */
+.widget {
+  background: #f9f9f9;
+  border-left: 5px solid #007bff;
+  padding: 20px;
   border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
+.widget:hover {
+  transform: scale(1.02);
+}
+
+/* Headings */
 h1, h2, h3 {
-  color: #444;
+  color: #333;
 }
 
-.todo-section input[type="text"],
-.todo-section input[type="date"] {
-  padding: 8px;
-  margin-right: 8px;
+/* Inputs & Buttons */
+input[type='text'], input[type='date'] {
+  padding: 10px;
+  margin-right: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 10px 16px;
   background-color: #007bff;
   border: none;
   color: white;
@@ -41,6 +56,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* To-Do List */
 #task-list {
   list-style: none;
   padding: 0;
@@ -48,7 +64,7 @@ button:hover {
 }
 
 #task-list li {
-  background: #f9f9f9;
+  background: #fff;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 8px;
@@ -58,21 +74,35 @@ button:hover {
   align-items: center;
 }
 
-#task-list li.completed {
-  text-decoration: line-through;
-  color: #999;
+/* Calendar */
+#calendar-container table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
+#calendar-container th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.today {
+  background-color: #d1ecf1;
+  font-weight: bold;
+  border: 2px solid #007bff;
+}
+
+/* Modal */
 .modal {
   display: none;
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   background: #fff3cd;
   border: 1px solid #ffeeba;
-  padding: 20px;
-  z-index: 1000;
+  padding: 15px;
+  z-index: 999;
   border-radius: 8px;
   width: 90%;
   max-width: 500px;
