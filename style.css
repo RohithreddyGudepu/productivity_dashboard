@@ -1,0 +1,168 @@
+/* 🌐 Base Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #fce4ec);
+  color: #333;
+}
+
+/* 🧱 Layout Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 🧢 Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #0077b6;
+}
+
+/* 🧩 Dashboard Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* 📦 Widget Cards */
+.widget {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ✏️ To-Do List Section */
+#task-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+#task-input:focus {
+  border-color: #0288d1;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color: #01579b;
+}
+
+/* 📋 To-Do List Styling */
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+#task-list li {
+  background-color: #e3f2fd;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+#task-list li:hover {
+  background-color: #bbdefb;
+}
+
+#task-list li span {
+  color: #f44336;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* 🗓️ Calendar */
+#calendar-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+#calendar-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 100%;
+}
+
+#calendar-container th,
+#calendar-container td {
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+#calendar-container th {
+  background-color: #f1f8e9;
+  color: #558b2f;
+}
+
+#calendar-container td:hover {
+  background-color: #c8e6c9;
+  cursor: pointer;
+}
+
+.today {
+  background-color: #43a047 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* 💬 Quote Section */
+#quote-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+#quote-author {
+  display: block;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
